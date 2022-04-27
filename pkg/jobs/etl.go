@@ -25,6 +25,7 @@ func ETL(word string, files []string) {
 	<-done
 }
 
+// Extract: extracts the information from the document to be processed
 func extract(fileChannel chan string, dataChannel chan models.Transport) {
 	for pathFile := range fileChannel {
 		var doc models.Transport
@@ -41,6 +42,7 @@ func extract(fileChannel chan string, dataChannel chan models.Transport) {
 	close(dataChannel)
 }
 
+// Transform: assigned the properties to the model to do the tf calculations and the word count
 func transform(word string, dataChannel chan models.Transport, modelChannel chan models.TFIDF) {
 	for doc := range dataChannel {
 		var model models.TFIDF
@@ -58,6 +60,7 @@ func transform(word string, dataChannel chan models.Transport, modelChannel chan
 	close(modelChannel)
 }
 
+// Load: calculate the idf and tf-idf to display the results
 func load(modelChannel chan models.TFIDF, done chan bool) {
 	var corpus []models.TFIDF
 

@@ -18,14 +18,18 @@ func (t *TFIDF) Tf() {
 	}
 }
 
+// TfIdf: calculates the tf-idf receiving the idf
+// as a parameter respecting the form tf-idf = tf*idf
 func (t *TFIDF) TfIdf(idf float64) {
 	t.TFIDF = t.TF * idf
 }
 
+// ExistWord: valid if exits word in document
 func (t *TFIDF) ExistWord() {
 	_, t.ContainWord = t.DocumentWord[t.Word]
 }
 
+// TotalWord: Count total word in document
 func (t *TFIDF) TotalWord() {
 	t.CountWord = t.DocumentWord[t.Word]
 }

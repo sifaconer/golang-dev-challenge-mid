@@ -1,7 +1,3 @@
-/*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
@@ -15,8 +11,13 @@ import (
 // tfidfCmd represents the tfidf command
 var tfidfCmd = &cobra.Command{
 	Use:   "tfidf",
-	Short: "A brief description of your command",
-	Long:  `A longer `,
+	Short: "Calculate the TF-IDF of a word",
+	Long: `Calculate the TF-IDF of a word given a document
+taking into account all existing documents within the folder 
+where the file is located.
+
+Example:
+  challenge tfidf -w "word" -f "./data/file1.txt"`,
 	Run: func(cmd *cobra.Command, args []string) {
 		word, _ := cmd.Flags().GetString("word")
 		if word == "" {

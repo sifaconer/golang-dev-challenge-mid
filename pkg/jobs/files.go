@@ -64,6 +64,7 @@ func wordCount(read io.Reader) (int, map[string]int) {
 	return total, counts
 }
 
+// calc idf
 func idf(corpus []models.TFIDF) float64 {
 	n := 0.0  // total documents
 	df := 0.0 // total number of documents containing the word

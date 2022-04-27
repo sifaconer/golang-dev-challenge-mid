@@ -1,23 +1,16 @@
-<p align="center">
-  <a href='https://weremote.net'>
-    <img src="https://weremote.net/wp-content/uploads/2021/04/Logo-WR.svg" width="300" />
-  </a>
-</p>
-<br />
+## Description
+CLI to calculate TF-IDF and download files
 
-## Descripción
-**GoLang Challenge (Mid)** es una prueba de admisión para desarrolladores especializados en GO.
+This CLI has the essential commands to calculate the TF-IDF weight and to download files from the internet through a given url.
 
-## Pasos
-1. Crear un **fork** y entregar el enlace del repositorio de tu usuario. Evaluaremos la prueba en tu repositorio personal.
-2. Seguir la documentación de los desafíos expuestos en **[este enlace](https://mcontigo.notion.site/Go-backend-developer-Mid-e74a485e93714b9897c84d20562d12ef)**.
-3. Usar buenas prácticas de programación.
+To calculate the weight of a word within a given document use:
 
-## Buenas prácticas y sugerencias
-1. Código legible y bien estructurado.
-2. Idioma del código y comentarios en inglés.
+```bash 
+challenge tfidf -w "ac" -f "/data/document_1.txt"
+```
 
-## Fecha límite
-1. Siete días (7 días) a partir del correo electrónico de envío del Desafío Tech. La fecha exacta está en el correo electrónico.
-2. Notificar en el correo electrónico la finalización y enviar solamente la url del repositorio para evaluación.
-3. Utilizar siempre en el correo electrónico la opción "Responder a todos".
+To download a file from the internet given the url of the file use:
+```bash 
+challenge wget "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf" -d "/tmp" -f "file.pdf"
+```
+
